@@ -1,0 +1,9 @@
+<meta charset='UTF-8'>
+<canvas id=C><script>H=600;c=C.getContext('2d')
+var a,l=440,p,i=0,X=95,M=Math,Y=l,r=1.047
+C.width=C.height=H;c.fillStyle='#fff';c.fillRect(0,0,H,H);c.fillStyle='#000'
+S=function(){a=0;c.beginPath();c.moveTo(X,Y);p=P(X,Y,l=!i?l:l/3);if(!i){c.lineTo(p.x,p.y);a-=r;p=P(X,Y,l)
+c.lineTo(p.x,p.y)}else{while((M.abs(p.x-X)>1)||(M.abs(p.y-Y)>1)){c.lineTo(p.x,p.y);t=P(p.x,p.y,3)
+a+=c.getImageData(t.x,t.y,1,1).data.every(function(e){return e==255})?-2*r:r;p=P(p.x,p.y,l)}}c.closePath();c.fill();c.stroke()}
+P=function(x,y,l){return{x:x+=l*M.cos(a),y:y+=l*M.sin(a)}}
+for(;i<6;i++)S()</script>
